@@ -16,6 +16,7 @@ jobs:
     - name: Move build files
       run: |
         robocopy ${{ github.workspace }} C:\SRC /e
+        exit 0
     - name: build
       run: |
           MAKEOPUS @FAST.INI
