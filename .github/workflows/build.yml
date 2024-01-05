@@ -19,6 +19,6 @@ jobs:
         exit 0
     - name: build
       run: |
-        otvdm.exe MAKEOPUS @FAST.INI
+        otvdm.exe makeopus.exe @FAST.INI
       working-directory: C:\SRC\OPUS\TOOLS\
       shell: cmd
