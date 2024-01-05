@@ -19,7 +19,6 @@ jobs:
         exit 0
     - name: build
       run: |
-        dir
-        makeopus.exe @FAST.INI
+        winevdm.exe MAKEOPUS @FAST.INI
       working-directory: C:\SRC\OPUS\TOOLS\
       shell: cmd
