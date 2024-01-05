@@ -15,7 +15,7 @@ jobs:
       run: choco install winevdm
     - name: Move build files
       run: |
-        cp ${{ github.workspace }} C:\SRC\
+        cp ${{ github.workspace }} C:\SRC
     - name: build
       run: |
           MAKEOPUS @FAST.INI
