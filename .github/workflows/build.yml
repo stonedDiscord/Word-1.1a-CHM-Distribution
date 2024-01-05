@@ -1,0 +1,22 @@
+name: DOS build
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build-windows:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install winevdm
+      run: cup -y winevdm
+    - name: Move build files
+      run: |
+        mv ${{ github.workspace }} C:\SRC\
+    - name: build
+      run: |
+          MAKEOPUS @FAST.INI
+      working-directory: C:\SRC\OPUS\TOOLS
