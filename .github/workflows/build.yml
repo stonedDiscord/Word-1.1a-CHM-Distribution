@@ -11,14 +11,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Install winevdm
-      run: choco install winevdm
+    - name: Install MS-DOS Player
+      run: |
+        wget https://github.com/stonedDiscord/msdos-player/releases/download/latest/mingw.zip
+        7z x mingw.zip
+        Add-Content $env:GITHUB_PATH "${{ github.workspace }}"
     - name: Move build files
       run: |
         robocopy ${{ github.workspace }} C:\SRC /e
         exit 0
     - name: build
       run: |
-        otvdm.exe makeopus.exe @FAST.INI
+        msdos_i486.exe makeopus.exe @FAST.INI
       working-directory: C:\SRC\OPUS\TOOLS\
       shell: cmd
