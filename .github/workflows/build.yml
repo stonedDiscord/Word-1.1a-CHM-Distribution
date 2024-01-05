@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Install winevdm
-      run: cup -y winevdm
+      run: choco install winevdm
     - name: Move build files
       run: |
         mv ${{ github.workspace }} C:\SRC\
