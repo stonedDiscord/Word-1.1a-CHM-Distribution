@@ -11,9 +11,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - uses: robinraju/release-downloader@v1.8
+      with: 
+        repository: "stonedDiscord/msdos-player"
+        latest: true
     - name: Install MS-DOS Player
       run: |
-        curl -O https://github.com/stonedDiscord/msdos-player/releases/download/latest/mingw.zip
+        dir
         7z x mingw.zip
         Add-Content $env:GITHUB_PATH "${{ github.workspace }}"
     - name: Move build files
