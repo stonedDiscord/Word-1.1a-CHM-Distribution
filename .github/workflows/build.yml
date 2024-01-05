@@ -19,6 +19,6 @@ jobs:
         exit 0
     - name: build
       run: |
-        winevdm.exe MAKEOPUS @FAST.INI
+        otvdm.exe MAKEOPUS @FAST.INI
       working-directory: C:\SRC\OPUS\TOOLS\
       shell: cmd
