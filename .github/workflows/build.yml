@@ -13,7 +13,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Install MS-DOS Player
       run: |
-        wget https://github.com/stonedDiscord/msdos-player/releases/download/latest/mingw.zip
+        curl -O https://github.com/stonedDiscord/msdos-player/releases/download/latest/mingw.zip
         7z x mingw.zip
         Add-Content $env:GITHUB_PATH "${{ github.workspace }}"
     - name: Move build files
