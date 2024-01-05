@@ -19,5 +19,6 @@ jobs:
         exit 0
     - name: build
       run: |
-          MAKEOPUS FAST.INI
+        MAKEOPUS @FAST.INI
       working-directory: C:\SRC\OPUS\TOOLS
+      shell: cmd
